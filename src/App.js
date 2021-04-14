@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Formulario from './components/Formulario';
 import Clima from './components/Clima';
 import Error from './components/Error';
+import {API} from './config';
 
 function App() {
 
@@ -21,8 +22,7 @@ function App() {
   useEffect(() => {
     if(consultar){
         const consultarAPI = async() => {
-        const appId = '22aad2746a86337a0b8029db57950cf4';
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${API}`;
   
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
